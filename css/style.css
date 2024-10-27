@@ -1,0 +1,222 @@
+:root{
+  /* ### Primary */
+
+--clr-Moderate-violet-primary: hsl(263, 55%, 52%);
+--clr-Very-dark-grayish-blue-primary: hsl(217, 19%, 35%);
+--clr-Very-dark-blackish-blue-primary: hsl(219, 29%, 14%);
+--White-primary: hsl(0, 0%, 100%);
+
+/* ### Neutral */
+--clr-Light-gray-neutral: hsl(0, 0%, 61%);
+--clr-Light-grayish-blue-neutral: hsl(210, 46%, 95%);
+
+}
+
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-family: "Barlow Semi Condensed", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--White-primary);
+  background-color: var(--clr-Light-grayish-blue-neutral);
+  
+}
+.cards-container{
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  
+}
+article{
+  background-color: var(--White-primary);
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 2rem;
+  box-shadow: 2px 4px 20px var(--clr-Light-gray-neutral);
+}
+article img{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+article .profile-info-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+article .profile-stats-wrapper{
+  margin-left: 1rem;
+}
+
+article .profile-stats-wrapper p{
+  line-height: 1.4;
+}
+article .profile-stats-wrapper p:nth-of-type(1){
+  font-size: 1.55rem;
+}
+article .profile-stats-wrapper p:nth-of-type(2){
+  font-weight: 500;
+  color: var(--clr-Light-gray-neutral);
+}
+
+article .article-text-wrapper p{
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+article .article-text-wrapper p:nth-of-type(1){
+  font-weight: 600;
+  font-size: 2rem;
+}
+article .article-text-wrapper p:nth-of-type(2){
+  font-weight: 500;
+  color: var(--clr-Light-gray-neutral);  
+}
+
+
+
+
+
+.first-card{
+  background: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 16px;
+  background-size: 34%;
+  background-color: var(--clr-Moderate-violet-primary);
+}
+.second-card{
+  background-color: var(--clr-Very-dark-grayish-blue-primary);
+}
+.third-card {
+  color: var(--clr-Very-dark-blackish-blue-primary);
+}
+
+.fourth-card{
+  background-color: var(--clr-Very-dark-blackish-blue-primary);
+}
+
+.fifth-card{
+  color: var(--clr-Very-dark-grayish-blue-primary);
+}
+
+
+/* footer styles */
+  
+footer{
+  margin-top: 2vw;
+  font-size: 1rem;
+}
+footer p{
+  color: gray;
+}
+footer a{
+  text-decoration: none;
+  color: orange;
+}
+
+.author{
+  font-size: 1.4rem;
+  letter-spacing: .8em;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 2px;
+  transition: transform 0.24s ease-in-out;
+}
+
+.author:hover, .author:focus-within{
+  display: inline-block;
+  transform: scale(1.4);
+  cursor: pointer;
+  background-color: black;
+}
+.author:hover a{
+  color: yellow;
+}
+
+.heart{
+  color: red;
+}
+
+/* media queries */
+
+@media screen and ( min-width:426px ) {
+
+  body{
+    height: 100vh;
+  }
+
+  .cards-container{
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+
+  .first-card{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .fourth-card{
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+ 
+  .fifth-card{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+}
+
+@media screen and ( min-width:769px ) {
+
+  
+  .cards-container{
+    width: 90%;
+  }
+  .first-card{
+    background-size: 22%;
+    background-position: top right 48px;
+  }
+}
+
+@media screen and ( min-width:1025px ) {
+
+  .cards-container{
+    width: 76%;
+  }
+  article{
+    padding: 3rem;
+  }
+  .first-card{
+    background-size: 19%;
+    background-position: top right 88px;
+  }
+  .third-card{
+    padding-right: 5rem;
+  }
+  .fifth-card{
+    padding-right: 4.8rem;
+  }
+  .fifth-card .article-text-wrapper  p:nth-of-type(2){
+    margin-top: 3rem;
+  }
+
+}
